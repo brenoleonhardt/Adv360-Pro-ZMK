@@ -12,8 +12,8 @@ flash() {
 		notify-send -a adv360-flash -t 10000 -i error "Adv360 Flash" "Plug in keyboard first!"
 		return
 	fi
-	err=$(cp "$file" "$target" 2>&1)
 	notify-send -a adv360-flash -t 10000 "Adv360 Flash" "Flashing $1-side..."
+	err=$(cp "$file" "$target" 2>&1)
 	if [[ $? -ne 0 ]]; then
 		notify-send -r 91722 -a adv360-flash -t 10000 -u critical -i error "Adv360 Flash" "$err"
 		return

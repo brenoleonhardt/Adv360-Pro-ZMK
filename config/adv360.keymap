@@ -18,6 +18,13 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+
+        td_bt: tap_dance_bt {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&bt BT_SEL 0>, <&bt BT_SEL 1>;
+        };
     };
 
     keymap {
@@ -30,7 +37,7 @@
 &kp TAB     &kp Q      &kp W         &kp E       &kp R        &kp T   &none                                                                   &kp C_VOL_UP  &kp Y   &kp U        &kp I           &kp O          &kp P     &kp BSLH
 &kp ESC     &kp A      &kp S         &kp D       &kp F        &kp G   &none     &kp LEFT_COMMAND  &kp LEFT_CONTROL      &kp RALT   &kp RGUI   &kp C_VOL_DN  &kp H   &kp J        &kp K           &kp L          &kp SEMI  &kp SQT
 &kp LSHFT   &kp Z      &hm LCTRL X   &hm LALT C  &hm LSHFT V  &kp B                               &kp HOME              &kp PG_UP                           &kp N   &hm RSHFT M  &hm RALT COMMA  &hm RCTRL DOT  &kp FSLH  &kp RSHFT
-&bt BT_NXT  &kp GRAVE  &kp CAPSLOCK  &kp LEFT    &kp RIGHT            &kp BSPC  &kp DELETE        &kp END               &kp PG_DN  &kp ENTER  &kp SPACE             &kp DOWN     &kp UP          &kp LBKT       &kp RBKT  &bl BL_TOG
+&td_bt      &kp GRAVE  &kp CAPSLOCK  &kp LEFT    &kp RIGHT            &kp BSPC  &kp DELETE        &kp END               &kp PG_DN  &kp ENTER  &kp SPACE             &kp DOWN     &kp UP          &kp LBKT       &kp RBKT  &bl BL_TOG
             >;
         };
 
